@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -24,7 +25,7 @@ public class UserController {
 		 @Autowired
 		 private UserService userServ;
 	    
-	    @GetMapping("/")
+	    @GetMapping("/register")
 	    public String register(
 	    		Model model
 		) {
@@ -32,6 +33,13 @@ public class UserController {
 	        model.addAttribute("newUser", new User());
 	        model.addAttribute("newLogin", new LoginUser());
 	        return "register.jsp";
+	    }
+	    
+	    @GetMapping("/")
+	    public String mainPage(
+	    		
+		) {	       
+	        return "mainPage.jsp";
 	    }
 	    
 	    @PostMapping("/register")
@@ -82,6 +90,33 @@ public class UserController {
 	        session.setAttribute("user_id", user.getId());
 	        return "redirect:/dashboard";
 	    }
+	    
+	    @GetMapping("/dashboard")
+		public String dashboard(HttpSession session, Model model) {
+		
+			if(session.getAttribute("user_id") == null) {
+				return "redirect:/";
+			}
+			
+			Long user_id = (Long) session.getAttribute("user_id");
+			User loggedUser = userServ.getOneUser(user_id);						
+			model.addAttribute("user", loggedUser);
+		
+			return "dashboard.jsp";
+		}
+	    
+	    @GetMapping("/users/{id}")
+		public String myAccount(@PathVariable("id") Long id, Model model, HttpSession session) {
+		
+			if(session.getAttribute("user_id") == null) {
+				return "redirect:/";
+			}
+			User oneUser = userServ.getOneUser(id);
+			
+			model.addAttribute("user", oneUser);
+			return "myAccount.jsp";
+		}
+		
 	    
 	    @RequestMapping("/logout")
 	      public String logout(HttpSession session ) {
