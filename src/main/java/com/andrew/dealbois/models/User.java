@@ -140,12 +140,12 @@ public class User {
 		this.confirm = confirm;
 	}
 
-//	public List<Course> getCreatedCourses() {
-//		return createdCourses;
+//	public List<Course> getAddedProducts() {
+//		return addedProducts;
 //	}
 //
-//	public void setCreatedCourses(List<Course> createdCourses) {
-//		this.createdCourses = createdCourses;
+//	public void setAddedProducts(List<Product> addedProducts) {
+//		this.addedProducts = addedProducts;
 //	}
 
 	public Date getCreatedAt() {

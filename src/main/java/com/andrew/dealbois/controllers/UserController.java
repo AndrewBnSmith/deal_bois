@@ -1,5 +1,7 @@
 package com.andrew.dealbois.controllers;
 
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -16,14 +18,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.andrew.dealbois.models.LoginUser;
+import com.andrew.dealbois.models.Product;
+import com.andrew.dealbois.models.ProductFaker;
 import com.andrew.dealbois.models.User;
 import com.andrew.dealbois.services.UserService;
+import com.andrew.dealbois.services.ProductService;
 
 @Controller
 public class UserController {
 
 		 @Autowired
 		 private UserService userServ;
+		 @Autowired
+		 private ProductService productServ;
 	    
 	    @GetMapping("/register")
 	    public String register(
@@ -36,9 +43,9 @@ public class UserController {
 	    }
 	    
 	    @GetMapping("/")
-	    public String mainPage(
-	    		
-		) {	       
+	    public String mainPage(Model model) {
+	    	List<Product> allProducts = productServ.getAllProducts();
+			model.addAttribute("products", allProducts);
 	        return "mainPage.jsp";
 	    }
 	    
@@ -69,6 +76,9 @@ public class UserController {
 	       
 	        model.addAttribute("newUser", new User());
 	        model.addAttribute("newLogin", new LoginUser());
+	        List<Product> allProducts = productServ.getAllProducts();
+			
+			model.addAttribute("products", allProducts);
 	        return "login.jsp";
 	    }
 	    
@@ -84,10 +94,11 @@ public class UserController {
 	    
 	        if(result.hasErrors()) {
 	            model.addAttribute("newUser", new User());
-	            return "index.jsp";
+	            return "login.jsp";
 	        }
 	     
 	        session.setAttribute("user_id", user.getId());
+	        
 	        return "redirect:/dashboard";
 	    }
 	    

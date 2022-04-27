@@ -15,6 +15,19 @@
 		<h1>This is the main page</h1>
 		<h1>Deal Bois</h1>
 		<a href="/login">Log in</a>
+		<a href="/register">Register</a>
+		<a href="/products/new">new</a>
+		<c:forEach var="product" items="${products}">
+					<tr>
+					
+						<td><a href="/products/${product.id}"><c:out value="${product.name }"/> </a>
+						<td>$<c:out value="${product.price }"/></td>	
+						<td><c:out value="${product.description }"/></td>
+						
+						
+						
+					</tr>
+				</c:forEach>
 	</div>
 </body>
 </html>

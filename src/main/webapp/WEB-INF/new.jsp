@@ -2,7 +2,7 @@
 <!-- New line below to use the JSP Standard Tag Library -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page isErrorPage="true" %> 
+<%@ page isErrorPage="true" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,24 +12,30 @@
 </head>
 <body>
 	<div class="container">
-		<h1>This is the main page</h1>
-		<h1>Deal Bois</h1>
-		<h5>Welcome <c:out value="${user.firstName }"/></h5>
-		<a href="/users/${user.id}"><c:out value="My account"/> </a>
-		
-	</div>
-	<div>
-		<c:forEach var="product" items="${products}">
-					<tr>
-					
-						<td><a href="/products/${product.id}"><c:out value="${product.name }"/> </a>
-						<td>$<c:out value="${product.price }"/></td>	
-						<td><c:out value="${product.description }"/></td>
-						
-						
-					</tr>
-		</c:forEach>
-	
+		<h1>Create a Product</h1>
+		<a href="/dashboard">Main Page</a>
+		<form:form action="/products/new" method="post" modelAttribute="productObj">
+				
+				<p>
+					Name:
+					<form:input path="name" />
+					<form:errors path="name" />
+				</p>
+				
+				<p>
+					Price
+					<form:input path="price" />
+					<form:errors path="price" />
+				</p>	
+				<p>
+					Description
+					<form:input path="description" />
+					<form:errors path="description" />
+				</p>		
+				<a href="/dashboard">Cancel</a>		
+				<button>Submit</button>
+				
+			</form:form>
 	</div>
 </body>
 </html>
