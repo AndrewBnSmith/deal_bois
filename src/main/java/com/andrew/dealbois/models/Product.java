@@ -35,6 +35,9 @@ public class Product {
     
     @NotEmpty(message="Description is required")
     private String description;
+    
+    @NotEmpty(message="quantity is required")
+    private String quantity;
       
     // RELATIONSHIPS
 //    @ManyToOne(fetch = FetchType.LAZY)
@@ -49,12 +52,14 @@ public class Product {
     public Product(
 			@NotEmpty(message = "Name is required") @Size(min = 2, message = "Name must be longer than 2 characters") String name,
 			@NotEmpty(message = "Price is required") Double price,
-    		@NotEmpty(message = "Description is required") String description)
+    		@NotEmpty(message = "Description is required") String description,
+    		@NotEmpty(message = "quantity is required") String quantity)
 			 {
 		super();
 		this.name = name;
 		this.price = price;
 		this.description = description;
+		this.quantity = quantity;
 	
 	}
 
@@ -85,6 +90,12 @@ public class Product {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
 	}
 	
 	public Double getPrice() {

@@ -32,6 +32,11 @@
 					<form:input path="description" />
 					<form:errors path="description" />
 				</p>		
+				<p>
+					Quantity
+					<form:input path="quantity" />
+					<form:errors path="quantity" />
+				</p>		
 				<a href="/dashboard">Cancel</a>		
 				<button>Submit</button>
 				

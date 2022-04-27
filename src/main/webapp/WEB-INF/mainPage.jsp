@@ -23,6 +23,7 @@
 						<td><a href="/products/${product.id}"><c:out value="${product.name }"/> </a>
 						<td>$<c:out value="${product.price }"/></td>	
 						<td><c:out value="${product.description }"/></td>
+						<td><c:out value="${product.quantity }"/></td>
 						
 						
 						
