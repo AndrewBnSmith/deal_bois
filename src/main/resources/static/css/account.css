@@ -1,0 +1,167 @@
+@charset "ISO-8859-1";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url("/images/background2.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    font-family: poppins;
+    font-weight: 600;
+    font-size: 16px;
+}
+.logo{
+    height: 60px;
+}
+a{
+    text-decoration: none;
+}
+
+header{
+    display: webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 70px;
+}
+.logo{
+    cursor: pointer;
+}
+.nav-area{
+    list-style: none;
+}
+.nav-area li{
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+.nav-area li a{
+    transition: .3s;
+    color: white;
+}
+
+.nav-area li a:hover{
+    color: #d22938
+}
+.btn-area {
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: black;
+    text-transform: uppercase;
+}
+.search-bar{
+    font-family: poppins;
+    border: 2px solid black;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+}
+.search-bar input, button{
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: black;
+    text-transform: uppercase;
+}
+button{
+    border: 0px;
+} 
+.search-bar input{
+    opacity: .8;
+    border: 2px solid black;
+}
+#account_info{
+    margin: auto;
+    height: 80%;
+    width: 60%;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#left_container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+#left_container > h1{
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 50px;
+    color: white;
+}
+#wish_list{
+    margin: auto;
+    background-color: white;
+    height: 550px;
+    width: 95%;
+    border-radius: 10px;
+}
+#top_box{
+    border-bottom: 2px solid black;
+    height: 15%;
+    width: 70%;
+    margin-left: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#top_box > h1{
+    font-family: 'Poppins', sans-serif;
+}
+#right_container{
+    display: flex;
+    flex-direction: column;
+    
+}
+#account_buttons{
+    background-color: white;
+    height: 50%;
+    width: 300px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#account_buttons > img{
+    height: 60px;
+    width: 90px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.user_button{
+    height: 50px;
+    width: 130px;
+    margin: 10px;
+    background-color: black;
+    color: White;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo_name{
+    margin-top: 40px;
+    margin:auto;
+    text-align: center;
+}
+#logo_name > img{
+    height: 100px;
+    width: 100px;
+}
