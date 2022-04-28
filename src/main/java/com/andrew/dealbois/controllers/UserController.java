@@ -1,26 +1,8 @@
 package com.andrew.dealbois.controllers;
 
 <<<<<<< HEAD
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-
-@Controller
-public class UserController {
-	
-	@GetMapping("/")
-	public String index() {
-		return "index.jsp";
-	}
-	@GetMapping("/browse")
-	public String browse() {
-		return "browse.jsp";
-	}
-}
-=======
 import java.util.List;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -36,10 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.andrew.dealbois.models.LoginUser;
 import com.andrew.dealbois.models.Product;
-import com.andrew.dealbois.models.ProductFaker;
 import com.andrew.dealbois.models.User;
-import com.andrew.dealbois.services.UserService;
 import com.andrew.dealbois.services.ProductService;
+import com.andrew.dealbois.services.UserService;
 
 @Controller
 public class UserController {
