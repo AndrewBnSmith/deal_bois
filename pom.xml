@@ -50,6 +50,20 @@
         </dependency>
         <!-- CONNECTING TO MYSQL DB -->
 		<!-- VALDATIONS -->
+<<<<<<< HEAD
+=======
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-validation</artifactId>
+	    </dependency>
+	    <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+		<dependency>
+		    <groupId>com.github.javafaker</groupId>
+		    <artifactId>javafaker</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
+	    
+>>>>>>> 835776f6271ef389c72133dba14b0327c4d1bdfc
 	    <!-- BCRYPT -->
 	</dependencies>
 
