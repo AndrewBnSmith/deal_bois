@@ -21,8 +21,9 @@
                 </li>
             </ul>
         </nav>
-        <a href="login_reg.html" class="btn-area1">Login</a>
-        <a href="index.html" class="btn-area2">Log Out</a>
+        <c:if test = "${user != null}">
+        	<a href="/logout" class="btn-area2">Log Out</a>
+        </c:if>
     <!-- email link -->
     </header>
     <div class="account-body">
