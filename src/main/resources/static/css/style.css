@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap');
 
+
 *{
     margin: 0;
     padding: 0;
@@ -38,6 +39,7 @@ header{
 }
 .nav-area{
     list-style: none;
+    margin-left: 130px;
 }
 .nav-area li{
     display: inline-block;
@@ -52,6 +54,30 @@ header{
 .nav-area li a:hover{
     color: #d22938
 }
+.btn-area1 {
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: black;
+    font-family: poppins;
+    
+}
+.btn-area2 {
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: black;
+    font-family: poppins;
+    margin-left: -325px;
+}
 .btn-area {
     cursor: pointer;
     color: #fff;
@@ -62,6 +88,7 @@ header{
     border-radius: 5px;
     background-color: black;
     font-family: poppins;
+    margin: 50px;;
 }
 .search-bar{
     font-family: poppins;
@@ -83,7 +110,7 @@ header{
 button{
     border: 0px;
 } 
-button:hover, .btn-area:hover{
+button:hover, .btn-area:hover, .btn-area1:hover, .btn-area2:hover{
     color: #d22938
 }
 .search-bar input{
@@ -255,11 +282,6 @@ button:hover, .btn-area:hover{
 .email{
     color: white;
 }  */
-.bottom-box{
-    display: flex;
-    justify-content: space-evenly;
-
-}
 /*----------------------------------- Login Registration ---------------------------------*/
 .container-login{
     color: white;
@@ -271,13 +293,18 @@ button:hover, .btn-area:hover{
     margin-bottom: 25px;
     margin-top: 75px;
 }
-.bottom-box2{
+/* ------------------------FOOTER---------------------------------- */
+.bottom-box{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 250px;
 }
 .text-box{
     outline: none;
+}
+.bottom-box_login{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 400px;
 }
 /* .login{
     display: flex;
@@ -287,3 +314,14 @@ button:hover, .btn-area:hover{
     background-color: #6D6D72;
     opacity: 80%;
 } */ 
+/* --------------------------Contact/ Affiliate------------------- */
+.contact-box, .email-text{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+.contact-text{
+    margin-top: 50px;
+}

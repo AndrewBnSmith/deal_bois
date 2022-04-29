@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Item</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/browse.css">
 </head>
 <body>
     <header>
@@ -30,16 +30,16 @@
     </header>
     <div id="main_content">
     
-	<div class="item_list">
-			<c:forEach var="product" items="${products}">
-										
-						<td><a href="/products/${product.id}"><c:out value="${product.name }"/> </a>
-						<td><c:out value="${product.description }"/></td>	
-						<td>$<c:out value="${product.price }"/></td>	
-									
-					
-				</c:forEach>
-           
+	 <div class="body-box">
+            <h2> <c:out value="${user.firstName }"/></h2>  
+		    <c:forEach var="product" items="${products}">
+		        <div class="item_list">
+		            <p class ="last-p"><a href="https://www.titan.fitness/racks/power-racks/t-3-series/t-3-series-power-rack/T3-SERIES-RACK.html"><c:out value="${product.name }" /> </a></p>
+		            <p> <c:out value="${product.description }" /></p>
+		            <p>$<c:out value="${product.price }"></c:out></p>
+		    
+		        </div>
+		    </c:forEach>      
         </div>
     </div>   
 </body>
