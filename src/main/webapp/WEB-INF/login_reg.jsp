@@ -15,19 +15,19 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="/img/logo1.jpg" alt="logo" class="logo"></a>
+        <a href="/index"><img src="/img/logo1.jpg" alt="logo" class="logo"></a>
         <nav>
             <ul class="nav-area">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="browse.html">Browse</a></li>
-                <li><a href="account.html">Account</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/browse">Browse</a></li>
+               
                 <li>
                     <input class="search-bar" type="text"></input>
                     <button>SEARCH</button>
                 </li>
             </ul>
         </nav>
-        <a href="login_reg.html" class="btn-area">Login</a>
+        <a href="/login" class="btn-area">Login</a>
     </header>
     <div class="container-login">
       <div class="login">
@@ -35,52 +35,59 @@
             <div class="col">
                 <h1>Register</h1>
                 <!-- <p class="text-right"><a href="/">Home</a></p> -->
-                <form action="/register/user" method="post">
+                <form:form action="/register"  method="post" modelAttribute="newUser">
                   <div class="form-group">
-                    <label>First Name</label>
-                    <input class="text-box" type="text" class="form-control" name="first_name"> 
+                    <label>First Name</label>                 
+                    <form:input class  = "text-box form-control" path="firstName" />
+					<form:errors path="firstName" />
                   </div>
                   <div class="form-group">
                     <label>Last Name</label>
-                    <input class="text-box"type="text" class="form-control" name="last_name"> 
+                    <form:input class  = "text-box form-control" path="lastName" />
+					<form:errors path="lastName" />
                   </div>
                   <div class="form-group">
                     <label>Email</label>
-                    <input class="text-box" type="text" class="form-control" name="email"> 
+                    <form:input class  = "text-box form-control" path="email" />
+					<form:errors path="email" />
                   </div>
                   <div class="form-group">
                     <label>Password</label>
-                    <input class="text-box" type="password" class="form-control" value="" name="password">
+                   <form:input class  = "text-box form-control" path="password" />
+					<form:errors path="password" />
                   </div>
                   <div class="form-group">
                     <label>Confirm Password</label>
-                    <input class="text-box" type="password" class="form-control" value="" name="confirm-password">
+                     <form:input class  = "text-box form-control" path="confirm" />
+					<form:errors path="confirm" />
                   </div>
                   <div class="form-check">
                     <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
                     <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </form:form>
             </div>
             <div class="col">
                 <h1>Login</h1>
                 <!-- <p class="text-right"><a href="/">Home</a></p> -->
-                <form action="/login" method="post">
+                <form:form action="/login" method="post" modelAttribute="newLogin">
                   <div class="form-group">
                     <label>Email</label>
-                    <input class="text-box" type="text" class="form-control" name="email"> 
+                    <form:input class  = "text-box form-control" path="email" />
+					<form:errors path="email" />
                   </div>
                   <div class="form-group">
                     <label>Password</label>
-                    <input class="text-box" type="password" class="form-control" value="" name="password">
+                   <form:input class  = "text-box form-control" path="password" />
+					<form:errors path="password" />
                   </div>
                   <div class="form-check">
                     <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
                     <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
                   </div>
                   <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </form:form>
             </div>
         </div>
       </div>

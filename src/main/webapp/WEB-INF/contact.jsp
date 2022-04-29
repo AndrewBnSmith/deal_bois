@@ -30,17 +30,21 @@
     </header>
     <div id="main_content">
     
-	<div class="item_list">
-			<c:forEach var="product" items="${products}">
-										
-						<td><a href="/products/${product.id}"><c:out value="${product.name }"/> </a>
-						<td><c:out value="${product.description }"/></td>	
-						<td>$<c:out value="${product.price }"/></td>	
-									
-					
-				</c:forEach>
-           
-        </div>
+		<form
+	  action="https://formspree.io/f/xeqnplrl"
+	  method="POST"
+	>
+	  <label>
+	    Your email:
+	    <input type="email" name="email">
+	  </label>
+	  <label>
+	    Your message:
+	    <textarea name="message"></textarea>
+	  </label>
+	  <!-- your other form fields go here -->
+	  <button type="submit">Send</button>
+	</form>
     </div>   
 </body>
 </html>

@@ -32,22 +32,24 @@ public class UserController {
 		 private UserService userServ;
 		 @Autowired
 		 private ProductService productServ;
-	    
-	    @GetMapping("/register")
-	    public String register(
-	    		Model model
-		) {
 	       
-	        model.addAttribute("newUser", new User());
-	        model.addAttribute("newLogin", new LoginUser());
-	        return "register.jsp";
-	    }
-	    
 	    @GetMapping("/")
 	    public String mainPage(Model model) {
 	    	List<Product> allProducts = productServ.getAllProducts();
 			model.addAttribute("products", allProducts);
-	        return "mainPage.jsp";
+	        return "index.jsp";
+	    }
+	    
+	    @GetMapping("/affiliatePage")
+	    public String affiliatePage() {
+	    
+	        return "affiliate.jsp";
+	    }
+	    
+	    @GetMapping("/contact")
+	    public String contactUs() {
+	    
+	        return "contact.jsp";
 	    }
 	    
 	    @PostMapping("/register")
@@ -63,14 +65,14 @@ public class UserController {
 	        if(result.hasErrors()) {
 	          
 	            model.addAttribute("newLogin", new LoginUser());
-	            return "register.jsp";
+	            return "login_reg.jsp";
 	        }
 	      
 	        session.setAttribute("user_id", registeredUser.getId());
-	        return "redirect:/dashboard";
+	        return "redirect:/account";
 	    }
 	    
-	    @GetMapping("login")
+	    @GetMapping("/login")
 	    public String login(
 	    		Model model
 		) {
@@ -80,7 +82,7 @@ public class UserController {
 	        List<Product> allProducts = productServ.getAllProducts();
 			
 			model.addAttribute("products", allProducts);
-	        return "login.jsp";
+	        return "login_reg.jsp";
 	    }
 	    
 	    @PostMapping("/login")
@@ -95,15 +97,15 @@ public class UserController {
 	    
 	        if(result.hasErrors()) {
 	            model.addAttribute("newUser", new User());
-	            return "login.jsp";
+	            return "login_reg.jsp";
 	        }
 	     
 	        session.setAttribute("user_id", user.getId());
 	        
-	        return "redirect:/dashboard";
+	        return "redirect:/account";
 	    }
 	    
-	    @GetMapping("/dashboard")
+	    @GetMapping("/account")
 		public String dashboard(HttpSession session, Model model) {
 		
 			if(session.getAttribute("user_id") == null) {
@@ -113,8 +115,11 @@ public class UserController {
 			Long user_id = (Long) session.getAttribute("user_id");
 			User loggedUser = userServ.getOneUser(user_id);						
 			model.addAttribute("user", loggedUser);
+			  List<Product> allProducts = productServ.getAllProducts();
+				
+				model.addAttribute("products", allProducts);
 		
-			return "dashboard.jsp";
+			return "account.jsp";
 		}
 	    
 	    @GetMapping("/users/{id}")
@@ -135,6 +140,13 @@ public class UserController {
 	         session.invalidate();
 	         return "redirect:/";
 	      }
+	    
+	    @GetMapping("/browse")
+	    public String browsePage(Model model) {
+	    	List<Product> allProducts = productServ.getAllProducts();
+			model.addAttribute("products", allProducts);
+	        return "browse.jsp";
+	    }
 
 	      
 	    
