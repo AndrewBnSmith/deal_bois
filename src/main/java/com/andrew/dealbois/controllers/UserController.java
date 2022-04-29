@@ -147,6 +147,12 @@ public class UserController {
 			model.addAttribute("products", allProducts);
 	        return "browse.jsp";
 	    }
+	    
+	    @GetMapping("/delete/{id}")
+		public String deleteUser(@PathVariable("id")Long id) {
+			userServ.deleteUser(id);
+			return "redirect:/";
+		}
 
 	      
 	    

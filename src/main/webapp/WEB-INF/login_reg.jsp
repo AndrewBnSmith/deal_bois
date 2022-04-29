@@ -20,6 +20,7 @@
             <ul class="nav-area">
                 <li><a href="/">Home</a></li>
                 <li><a href="/browse">Browse</a></li>
+                   <li><a href="/account">Account</a></li>
                
                 <li>
                     <input class="search-bar" type="text"></input>
@@ -93,9 +94,9 @@
       </div>
     </div>
     <div class="bottom-box2">
-        <a href="contact.html" class="btn-area">Become an affiliate</a>
-        <a href="contact.html" class="btn-area">Contact Us</a>
-        <a href="login_reg.html" class="btn-area">Register </a>
+        <a href="/affiliatePage" class="btn-area">Become an affiliate</a>
+        <a href="/contact" class="btn-area">Contact Us</a>
+        <a href="/login" class="btn-area">Register </a>
     </div>
 </body>
 </html>

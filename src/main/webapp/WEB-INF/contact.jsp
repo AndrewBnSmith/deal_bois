@@ -48,7 +48,7 @@
 		</div>
 	</div>
     <div class="bottom-box">
-        <a href="/affiliate" class="btn-area">Become an affiliate</a>
+        <a href="/affiliatePage" class="btn-area">Become an affiliate</a>
         <a href="/contact" class="btn-area">Contact Us</a>
         <a href="/login" class="btn-area">Register </a>
     </div>

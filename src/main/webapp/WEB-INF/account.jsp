@@ -15,10 +15,10 @@
 </head>
 <body>
     <header>
-        <a href="/index"><img src="img/logo1.jpg" alt="logo" class="logo"></a>
+        <a href="/"><img src="img/logo1.jpg" alt="logo" class="logo"></a>
         <nav>
             <ul class="nav-area">
-                <li><a href="/index">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/browse">Browse</a></li>
                 <li><a href="/account">Account</a></li>
                 <li>
@@ -27,7 +27,11 @@
                 </li>
             </ul>
         </nav>
-        <a href="/logout" class="btn-area2">Log Out</a>
+        <c:if test = "${user != null}">
+        	<a href="/logout" class="btn-area2">Log Out</a>
+        </c:if>
+        
+        
     </header>
     <div class="account-body">
         <div class="body-box">
@@ -46,7 +50,7 @@
     <div class="bottom-box">
         <a href="/affiliatePage" class="btn-area">Become an affiliate</a>
         <a href="/contact" class="btn-area">Contact Us</a>
-        <a href="/index" class="btn-area">Delete Account </a>
+        <a href="/delete" class="btn-area">Delete Account </a>
     </div>
 </body>
 </html>

@@ -293,6 +293,10 @@ button:hover, .btn-area:hover, .btn-area1:hover, .btn-area2:hover{
     margin-bottom: 25px;
     margin-top: 75px;
 }
+.bottom-box2{
+    display: flex;
+    justify-content: space-evenly;
+}
 /* ------------------------FOOTER---------------------------------- */
 .bottom-box{
     display: flex;

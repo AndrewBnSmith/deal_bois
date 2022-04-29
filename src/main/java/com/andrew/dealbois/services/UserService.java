@@ -79,5 +79,9 @@ public class UserService {
 
         return user;
     }
+    
+    	public void deleteUser(Long id) {
+		userRepo.deleteById(id);
+	}
 	
 }
